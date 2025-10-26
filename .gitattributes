@@ -1,0 +1,26 @@
+# ==============================
+# Enforce LF (Unix) line endings
+# ==============================
+
+# Default to LF for all text files
+* text eol=lf
+
+# Ensure specific file types always use LF
+*.rs text eol=lf
+*.sh text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+
+# Treat binaries as-is (no EOL conversion)
+*.png binary
+*.jpg binary
+*.gif binary
+*.exe binary
+*.dll binary
+*.zip binary
+*.uf2 binary

@@ -1,0 +1,28 @@
+[package]
+name = "kear_os"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+critical-section = "1"
+panic-halt = "0.2"
+embedded-hal = "1.0.0" # optional, handy later
+
+[build-dependencies]
+cmake = "0.1"
+cc = "1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "s"
+panic = "abort"
+
+[[bin]]
+name = "kear_os"
+path = "src/bin/blink.rs"

@@ -1,0 +1,14 @@
+[build]
+target = "thumbv8m.main-none-eabi"
+
+[target.thumbv8m.main-none-eabi]
+linker = "arm-none-eabi-gcc"
+runner = "elf2uf2-rs -d"
+rustflags = [
+  "-C","link-arg=-Tlink.x",
+  "-C","link-arg=-Wl,--gc-sections",
+  "-C","link-arg=-Wl,--strip-debug",
+  "-C","link-arg=-Wl,--nmagic",
+  "-C","link-arg=-nostartfiles",
+  "-C","link-arg=-specs=nosys.specs",
+]
